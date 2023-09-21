@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
-* print_alias - add, remove or show aliases
+* print_alias - adds, removes or show aliases
 * @data: struct for the program's data
-* @alias: name of all the  alias to be printed
-* Return: zero if sucess, or other numbers if its  already declared in the arguments
+* @alias: name of the alias to be printed
+* Return: zero if sucess, or other numbers if its declared in the arguments
 */
 int print_alias(data_of_program *data, char *alias)
 {
@@ -54,7 +54,7 @@ return (NULL);
 alias_length = str_length(name);
 
 for (i = 0; data->alias_list[i]; i++)
-{/* Iterates through the environ and check for coincidence of the varname */
+{/* Iterates through the environ and also check for coincidence of the varname */
 if (str_compare(name, data->alias_list[i], alias_length) &&
 data->alias_list[i][alias_length] == '=')
 {/* returns the value of the key NAME=  when find it */

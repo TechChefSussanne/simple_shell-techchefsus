@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
-a9bb82e5f2a955229cfea9bb82e5f2a955229cf* _getline - receives line from users
+* _getline - receives line from users
 * @data: struct for the program's data
 * Return: reading count
 */

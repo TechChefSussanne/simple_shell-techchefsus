@@ -1,0 +1,11 @@
+cd
+pwd
+touch
+rm
+mkdir
+mv
+cp
+ls
+cat
+chmod
+du

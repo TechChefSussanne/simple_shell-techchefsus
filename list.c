@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
-* builtins_list - lists of commands
+* builtins_list - list of commands
 * @data: struct for the program's data
 * Return: 1
 **/
@@ -19,16 +19,16 @@ builtins options[] = {
 {NULL, NULL}
 };
 
-/*walk through many of the  structure*/
+/*walk through the structure*/
 for (iterator = 0; options[iterator].builtin != NULL; iterator++)
 {
-/*if there is as a match between the given command and a builtin,*/
+/*if there is a match between the given command and a builtin,*/
 if (str_compare(options[iterator].builtin, data->command_name, 0))
 {
-/*execute this function, and returns the return value of the function*/
+/*execute the function, and return the return value of the function*/
 return (options[iterator].function(data));
 }
-/*if there are no match return -1 */
+/*if there is no match return -1 */
 }
 return (-1);
 }

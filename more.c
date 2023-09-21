@@ -1,7 +1,7 @@
-ginclude "shell.h"
+#include "shell.h"
 
 /**
-* builtin_exit - exits the shell
+* builtin_exit - exit the shell
 * @data: struct for the program's data
 * Return: 1
 */

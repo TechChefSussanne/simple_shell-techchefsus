@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
-* expand_variables - expands variables
+* expand_variables - expand variables
 * @data: a pointer to a struct of the program's data
-* Return: void in all integers
+* Return: void
 */
 void expand_variables(data_of_program *data)
 {
@@ -50,10 +50,10 @@ data->input_line = str_duplicate(line);
 }
 
 /**
-* expand_alias - expands alias
-* @data: a pointer to a structs of the program's data
+* expand_alias - expans aliases
+* @data: a pointer to a struct of the program's data
 *
-* Return: nothing, but sets errors.
+* Return: nothing, but sets errno.
 */
 void expand_alias(data_of_program *data)
 {
@@ -92,7 +92,7 @@ data->input_line = str_duplicate(line);
 }
 
 /**
-* buffer_add - append string at ends of the buffer
+* buffer_add - append string at end of the buffer
 * @buffer: buffer to be filled
 * @str_to_add: string to be copied in the buffer
 * Return: nothing, but sets errno.

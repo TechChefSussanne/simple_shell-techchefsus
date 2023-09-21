@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
-* execute - executes a commands from the user
+* execute - execute a commands from the user
 * @data: a pointer to the program's data
 * Return: -1.
 */
@@ -10,7 +10,7 @@ int retval = 0, status;
 pid_t pidd;
 
 retval = builtins_list(data);
-if (retval != -1)/* if program was to be found in built ins */
+if (retval != -1)/* if program was found in built ins */
 return (retval);
 
 retval = find_program(data);
@@ -20,9 +20,9 @@ return (retval);
 }
 else
 {/* if program was found */
-pidd = fork(); /* creates a child process */
+pidd = fork(); /* create a child process */
 if (pidd == -1)
-{ /* if the fork call eventually failed */
+{ /* if the fork call failed */
 perror(data->command_name);
 exit(EXIT_FAILURE);
 }

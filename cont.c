@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
-* builtin_env - shows the environments in which the shell runs
-* @data: struct for the program data
+* builtin_env - shows the environment where the shell runs
+* @data: struct for the program's data
 * Return: zero if sucess, or other number if its declared in the arguments
 */
 int builtin_env(data_of_program *data)
@@ -17,7 +17,7 @@ print_environ(data);
 else
 {
 for (i = 0; data->tokens[1][i]; i++)
-{/* check it if exists a char = */
+{/* checks if exists a char = */
 if (data->tokens[1][i] == '=')
 {/* checks if exists a var with the same name and change its value*/
 /* temporally */
@@ -25,15 +25,15 @@ var_copy = str_duplicate(env_get_key(cpname, data));
 if (var_copy != NULL)
 env_set_key(cpname, data->tokens[1] + i + 1, data);
 
-/* print all the environ */
+/* print the environ */
 print_environ(data);
 if (env_get_key(cpname, data) == NULL)
-{/* print the variables  if it does not exist in the environ */
+{/* print the variable if it does not exist in the environ */
 _print(data->tokens[1]);
 _print("\n");
 }
 else
-{/* returns the old values of the var*/
+{/* returns the old value of the var*/
 env_set_key(cpname, var_copy, data);
 free(var_copy);
 }
@@ -51,7 +51,7 @@ return (0);
 /**
 * builtin_set_env - ..
 * @data: struct for the program's data
-* Return: zero if sucess, or other numbers if its declared in the arguments
+* Return: zero if sucess, or other number if its declared in the arguments
 */
 int builtin_set_env(data_of_program *data)
 {
@@ -72,12 +72,12 @@ return (0);
 
 /**
 * builtin_unset_env - ..
-* @data: struct for all the program's data'
+* @data: struct for the program's data'
 * Return: ..
 */
 int builtin_unset_env(data_of_program *data)
 {
-/* validates args */
+/* validate args */
 if (data->tokens[1] == NULL)
 return (0);
 if (data->tokens[2] != NULL)
